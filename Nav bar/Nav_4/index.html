@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav_4</title>
+    <style>
+        :root {
+            --text-primary: #b6b6b6;
+            --text-secondary: #ececec;
+            --bg-primary: #23232e;
+            --bg-secondary: #141418;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            color: black;
+            background-color: white;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+            padding: 20px 30px;
+            background: var(--bg-primary);
+            margin: auto;
+            text-align: center ;
+        }
+
+        .navbar .logo {
+            color: var(--text-secondary);
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .logo b {
+            color: red;
+        }
+
+        .search_box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 35px;
+            line-height: 35px;
+        }
+
+        .search_box input {
+            border: none;
+            outline: none;
+            background: var(--text-primary);
+            height: 100%;
+            padding: 0 10px;
+            font-size: 20px;
+            width: 350px;
+        }
+
+        .search_box span {
+            height: 100%;
+            padding: 8px;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            background: var(--text-primary);
+        }
+
+        .search_box span::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0%;
+            height: 100%;
+            background: rgba(255, 0, 0, 0.742);
+            z-index: -1;
+            transition: 0.5s ease;
+        }
+
+        .search_box span:hover:after {
+            width: 100%;
+
+        }
+
+        .search_box span:hover svg {
+            fill: white;
+        }
+
+
+        .search_box span svg {
+            fill: rgb(31, 60, 157);
+            transition: .5s ease;
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+        label svg{
+            fill: white;
+        }
+        .menu{
+            position: absolute;
+            top: 15px;
+            right: 0;
+            display: none;
+        }
+        .menu label{
+            
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translate(-50%,-50%);
+            cursor: pointer;
+        }
+        input[type="checkbox"]{
+            display: none;
+        }
+        .hero{
+            background: black;
+            height: 100vh;
+            position: relative;
+            z-index: -2;
+        }
+
+        @media screen and (max-width: 992px) {
+            nav{
+                display: block;
+                padding: 0;
+            }
+            nav .logo{
+                display: inline-block;
+                padding: 0px 30px;
+            }
+            .search_box{
+                width: 100%;
+                display: inline-flex;
+                justify-content: center;
+                margin: 15px 0;
+            }
+            .search_box input{
+                width: 90%;
+            }
+            ul{
+                flex-direction: column;
+                background: white;
+                padding: 20px;
+                position: fixed;
+                top: -150px;
+                left: 0;
+                width: 100%;
+                transition: 0.5s ease;
+                z-index: -1;
+                
+            }
+            ul li{
+                text-align: center;
+            }
+            .navbar ul li a{
+                padding: 20px;
+                font-size: 20px;
+                color: var(--bg-primary);
+            }
+            .menu{
+                display: block;
+            }
+            .menu .close{
+                display: none;
+            }
+            #click:checked ~ nav .menu .close{
+                display: block;
+            }
+            #click:checked ~ nav .menu .open{
+                display: none;
+            }
+            #click:checked ~ nav ul {
+               top: 80px;
+
+            }
+
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" id="click">
+    <nav class="navbar">
+        <div class="logo">R <b>i</b> D <b>O</b> M</div>
+        <div class="search_box">
+            <input type="search" placeholder="Search here">
+            <span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#1f1f1f">
+                    <path
+                        d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+                </svg>
+            </span>
+        </div>
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="">Services</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Login here</a></li>
+        </ul>
+        <div class="menu">
+            <label for="click" class="open">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+                    <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                </svg>
+            </label>
+            <label for="click" class="close">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+            </label>
+        </div>
+    </nav>
+    <section class="hero">
+
+    </section>
+
+</body>
+
+</html>

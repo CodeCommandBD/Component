@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav_3</title>
+    <style>
+        :root {
+            --primary-color: #1b1b1c;
+            --text-color: #ffffff;
+            --background-color: #f4f4f4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .nav_bar{
+            width: 100%;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+            position: relative;
+            background-color: var(--primary-color);
+            padding: 0 20px;
+            
+        }
+        .nav_bar li a{
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 20px;
+            padding: 0px 10px;
+        }
+        .menu{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .menu li a{
+            position: relative;
+            text-transform: uppercase;
+            transition: .5s ease;
+        }
+        .menu li a::after{
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            background: red;
+            left: 0;
+            bottom: -5px;
+            transition: .5s ease;
+        }
+        .menu li a:hover:after{
+            width: 100%;
+        }
+        .nav_bar label svg{
+            fill: var(--text-color);
+        }
+
+        .nav_bar input[type="checkbox"]{
+            display: none;
+        }
+
+        .open-btn, .close-btn{
+            display: none;
+            position: absolute;
+            top: 55%;
+            right: 20px;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+        }   
+       .close-btn{
+            top: 30px;
+            right: 20px;
+       }
+        @media screen and (max-width: 768px){
+            .menu{
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                position: fixed;
+                top: 0px;
+                right: -100%;
+                width: 80%;
+                height: 100vh;
+                background-color: var(--primary-color);
+                z-index: 100;
+                transition: 0.5s ease;
+            }
+            .menu li{
+                margin: 20px 0;
+            }
+            .menu li a{
+                font-size: 15px;
+            }
+            .open-btn, .close-btn{
+                display: block;
+            }
+            #click:checked ~ .menu{
+                right: 0px;
+            }
+            #click:checked ~ .open-btn{
+                display: none;
+            }
+            #click:checked ~ .close-btn{
+                display: block;
+            }
+        }
+        
+    </style>
+</head>
+
+<body>
+    <nav>
+        
+
+        
+        <ul class="nav_bar">
+            <li><a href="#">logo</a></li>
+            <input type="checkbox" name="" id="click">
+            <span class="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Blog</a></li>
+                <label for="click" class="close-btn"> 
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+                </label>
+            </span>
+            <label for="click" class="open-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+            </label>
+        </ul>
+        
+        <!-- menu  -->
+        
+        
+        
+    </nav>
+</body>
+
+</html>

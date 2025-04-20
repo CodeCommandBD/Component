@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav_2</title>
+    <style>
+        :root {
+            --primary-color: #1b1b1c;
+            --text-color: #ffffff;
+            --background-color: #f4f4f4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--text-color);
+        }
+
+        nav {
+            height: 60px;
+            background-color: var(--primary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            color: var(--text-color);
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+
+        }
+
+        nav .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+
+        }
+
+        .nav-links li {
+            display: inline-block;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: 0.4s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-color);
+            background: var(--background-color);
+        }
+
+        .menu-btn {
+            display: none;
+
+        }
+
+        #click {
+            display: none;
+        }
+
+        .open-btn,
+        .close-btn {
+            display: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            .open-btn {
+                display: block;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 60px;
+                left: -100%;
+                background: #131315;
+                height: 100vh;
+                width: 100%;
+                flex-direction: column;
+                justify-content: start;
+                align-items: center;
+                padding: 20px 0;
+                transition: 0.4s ease;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .nav-links a:hover,
+            .nav-links a.active {
+                color: cyan;
+                background: none;
+            }
+
+
+            .menu-btn svg {
+                fill: white;
+                cursor: pointer;
+                font-size: 20px;
+            }
+
+            #click:checked~.nav-links {
+                left: 0;
+            }
+
+            #click:checked~.open-btn {
+                display: none;
+            }
+
+            #click:checked~.close-btn {
+                display: block;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">RIDOM</div>
+        <input type="checkbox" id="click" class="" />
+        <label for="click" class="menu-btn open-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+            </svg>
+        </label>
+        <label for="click" class="menu-btn close-btn">
+            <!-- Close Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="#ffffff">
+                <path d="M0 0h24v24H0V0z" fill="none" />
+                <path
+                    d="M18.3 5.71a1 1 0 00-1.41 0L12 10.59 7.11 5.7a1 1 0 00-1.41 1.41L10.59 12l-4.89 4.89a1 1 0 101.41 1.41L12 13.41l4.89 4.89a1 1 0 001.41-1.41L13.41 12l4.89-4.89a1 1 0 000-1.4z" />
+            </svg>
+        </label>
+
+        <ul class="nav-links">
+            <li><a class="active" href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</body>
+
+</html>
