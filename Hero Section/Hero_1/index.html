@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero_1</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .hero{
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.532),rgba(0, 0, 0, 0.571)), url(./img/mora.avif);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            color: white;
+            
+        }
+        .container{
+            width: 90%;
+            height: 100%;
+            max-width: 1200px;
+            margin:0  auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        .info h1{
+            font-size: 25px;
+            margin-bottom: 20px;
+
+        }
+        .info p{
+            max-width: 70%;
+        }
+        .info button{
+            background: white;
+            padding: 15px 20px;
+            border-radius: 5px;
+            font-size: 18px;
+            border: none;
+            margin-top: 20px;
+            color: tomato;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="container">
+            <div class="info">
+                <h1>This is header</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni, iusto similique recusandae, voluptates tenetur cumque unde omnis porro perferendis distinctio eveniet hic soluta dolorum velit architecto atque nesciunt illum vitae.</p>
+                <button>click here</button>
+            </div>
+            <div class="img"></div>
+        </div>
+    </section>
+</body>
+</html>

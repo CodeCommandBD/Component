@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero_2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            color: white;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            right: 0;
+            z-index: 999;
+            padding: 30px 8%;
+            background: transparent;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .menu a {
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            border-bottom: 2px solid transparent;
+            transition: 0.50s;
+        }
+
+        .menu a:hover {
+            border-bottom: 2px solid white;
+        }
+
+        .box {
+            display: none;
+        }
+        .box svg{
+            fill: white;
+        }
+
+        .hero {
+            width: 100%;
+            height: 100%;
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 128, 0, 0.732), rgba(0, 128, 0, 0.788));
+            /* position: relative; */
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            justify-content: center;
+            padding: 0 14%;
+        }
+
+        /* .content{
+            max-width: 500px;
+            position: absolute;
+            top: 50%;
+            padding: 0 8%;
+            transform: translate(0%,-50%);
+        } */
+        .content h5 {
+            font-size: 14px;
+            font-weight: 400;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .content h1 {
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .content a {
+            background: #4d9559;
+            border: 1px solid transparent;
+            padding: 10px 15px;
+            line-height: 1.4;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 30px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-self: center;
+
+        }
+
+        .hero-img img {
+            width: 350px;
+            height: auto;
+
+        }
+
+        .btn {
+            margin-top: 20px;
+            display: flex;
+            gap: 5px;
+        }
+
+        .btn a svg {
+            fill: white;
+        }
+
+        .social_icon {
+            position: absolute;
+            top: 50%;
+            padding: 0 8%;
+            transform: translate(0, -50%);
+            /* display: flex;
+            flex-direction: column; */
+        }
+
+        .social_icon a {
+            display: block;
+            margin: 20px 0;
+            transition: 0.5s;
+        }
+
+        .social_icon a svg {
+            fill: white;
+            transition: 0.5s;
+        }
+
+        .social_icon a:hover {
+
+            transform: translateY(10px);
+        }
+
+        .social_icon a:hover svg {
+            fill: #1a4020b8;
+        }
+        input[type='checkbox']{
+            display: none;
+        }
+        @media screen and (max-width:1500px) {
+            header {
+                padding: 15px 3%;
+                transition: 0.2s;
+            }
+
+            .social_icon {
+                padding: 0 3%;
+                transition: 0.2s;
+            }
+
+        }
+
+        @media screen and (max-width:1300px) {
+            .content h1 {
+                font-size: 18px;
+            }
+        }
+
+        @media screen and (max-width:1100px) {
+            .hero-img {
+                text-align: center;
+
+            }
+
+            .hero-img img {
+                width: 250px;
+                height: auto;
+            }
+
+            .hero {
+                padding-top: 115px;
+                height: 100%;
+                gap: 1rem;
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media screen and (max-width:766px) {
+            .social_icon {
+                display: none;
+            }
+
+            .hero {
+                padding: 115px 3%;
+            }
+
+            .box {
+                display: block;
+            }
+            .menu{
+                position: absolute;
+                top: 90%;
+                flex-direction: column;
+                right: -100%;
+                padding: 30px 40px;
+                background: rgb(0, 128, 0);
+                transition: 0.5s;
+               
+            }
+            .menu li{
+                margin-bottom: 15px;
+            }
+            .close {
+                display: none;
+            }
+            
+            #click:checked ~ .close{
+                display: block;
+            }
+            #click:checked ~ .box-menu{
+                display: none;
+            }
+            #click:checked ~ .menu{
+                right: 3%;
+            }
+           
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="" class="logo">COC-STATS</a>
+        <input type="checkbox" id="click">
+        <label for="click" class="box box-menu" id="menu-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+            </svg>
+        </label>
+        <label for="click" class="box close">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+        </label>
+        
+        <ul class="menu">
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Clans</a></li>
+            <li><a href="">Town Hall</a></li>
+            <li><a href="">Troops</a></li>
+        </ul>
+        
+    </header>
+    <section>
+        <div class="hero">
+            <div class="content">
+
+                <h5>#2 Trending</h5>
+
+                <h1>GOBLIN</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae culpa esse incidunt ipsa, aperiam
+                    quidem.</p>
+                <div class="btn">
+
+                    <a href="">Compare</a>
+                    <a href="" class="play">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#1f1f1f">
+                            <path d="M320-200v-560l440 280-440 280Zm80-280Zm0 134 210-134-210-134v268Z" />
+                        </svg> WATCH GAMEPLAY
+                    </a>
+                </div>
+            </div>
+            <div class="hero-img">
+                <img src="./img/Goblin.png" alt="">
+            </div>
+
+        </div>
+    </section>
+    <div class="social_icon">
+        <a href="">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+                <path
+                    d="M616-242q-27 1-51.5 1.5t-43.5.5h-41q-71 0-133-2-53-2-104.5-5.5T168-257q-26-7-45-26t-26-45q-6-23-9.5-56T82-447q-2-36-2-73t2-73q2-30 5.5-63t9.5-56q7-26 26-45t45-26q23-6 74.5-9.5T347-798q62-2 133-2t133 2q53 2 104.5 5.5T792-783q26 7 45 26t26 45q6 23 9.5 56t5.5 63q2 36 2 73v17q-19-8-39-12.5t-41-4.5q-83 0-141.5 58.5T600-320q0 21 4 40.5t12 37.5ZM400-400l208-120-208-120v240Zm360 200v-80h-80v-80h80v-80h80v80h80v80h-80v80h-80Z" />
+            </svg>
+        </a>
+        <a href="">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+                <path
+                    d="M480-80 120-280v-400l360-200 360 200v400L480-80ZM364-590q23-24 53-37t63-13q33 0 63 13t53 37l120-67-236-131-236 131 120 67Zm76 396v-131q-54-14-87-57t-33-98q0-11 1-20.5t4-19.5l-125-70v263l240 133Zm40-206q33 0 56.5-23.5T560-480q0-33-23.5-56.5T480-560q-33 0-56.5 23.5T400-480q0 33 23.5 56.5T480-400Zm40 206 240-133v-263l-125 70q3 10 4 19.5t1 20.5q0 55-33 98t-87 57v131Z" />
+            </svg>
+        </a>
+        <a href="">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+                <path
+                    d="M440-501Zm0 381L313-234q-72-65-123.5-116t-85-96q-33.5-45-49-87T40-621q0-94 63-156.5T260-840q52 0 99 22t81 62q34-40 81-62t99-22q81 0 136 45.5T831-680h-85q-18-40-53-60t-73-20q-51 0-88 27.5T463-660h-46q-31-45-70.5-72.5T260-760q-57 0-98.5 39.5T120-621q0 33 14 67t50 78.5q36 44.5 98 104T440-228q26-23 61-53t56-50l9 9 19.5 19.5L605-283l9 9q-22 20-56 49.5T498-172l-58 52Zm280-160v-120H600v-80h120v-120h80v120h120v80H800v120h-80Z" />
+            </svg>
+        </a>
+    </div>
+</body>
+
+</html>
