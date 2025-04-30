@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid-2</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            gap: 20px;
+            background: linear-gradient(to right, rgb(4, 32, 4) ,rgb(5, 41, 5));
+        }
+        .left {
+            flex-basis: 30%;
+            color: white;
+            text-align: center;
+        }
+        .left .head{
+            font-size: 40px;
+        }
+        .sub-head{
+            margin-top: 20px;
+        }
+        .gallery{
+            flex-basis: 50%;
+            display: grid;
+            gap: 8px;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 120px;
+        }
+        .box{
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #222;
+            background-blend-mode: hard-light;
+            transition: 0.5s ease-in-out;
+        }
+        .col-2{
+            grid-column: span 2;
+        }
+        .row-2{
+            grid-row: span 2;
+        }
+        .box:hover{
+            background-color: #999;
+            background-position: bottom;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <h2 class="head">My Gallery</h2>
+            <p class="sub-head">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum aut minus atque cupiditate non corporis!</p>
+        </div>
+        <div class="gallery">
+            <div class="box row-2" style="background-image: url(https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fG5hdHVyZXxlbnwwfHwwfHx8MA%3D%3D)">Waterfalls</div>
+
+
+            <div class="box col-2" style="background-image: url(https://images.unsplash.com/photo-1458668383970-8ddd3927deed?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDN8fG5hdHVyZXxlbnwwfHwwfHx8MA%3D%3D);">Hills</div>
+
+
+            <div class="box" style="background-image: url(https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTM0fHxuYXR1cmV8ZW58MHx8MHx8fDA%3D);">Ocean</div>
+
+
+            <div class="box row-2" style="background-image: url(https://images.unsplash.com/photo-1431440869543-efaf3388c585?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTc1fHxuYXR1cmV8ZW58MHx8MHx8fDA%3D);">Rain</div>
+
+
+            <div class="box col-2" style="background-image: url(https://plus.unsplash.com/premium_photo-1675805015359-fda0a96d5842?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTg5fHxuYXR1cmV8ZW58MHx8MHx8fDA%3D);">Mountain</div>
+
+
+            <div class="box" style="background-image: url(https://images.unsplash.com/photo-1495107334309-fcf20504a5ab?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjEwfHxuYXR1cmV8ZW58MHx8MHx8fDA%3D);">Trees</div>
+
+
+            <div class="box col-2" style="background-image: url(https://images.unsplash.com/photo-1539139329395-ceb575183d8b?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjE1fHxuYXR1cmV8ZW58MHx8MHx8fDA%3D);">Beach</div>
+        </div>
+    </div>
+</body>
+</html>
