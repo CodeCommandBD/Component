@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer2</title>
+    <script src="https://kit.fontawesome.com/98693b79c6.js" crossorigin="anonymous"></script>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        footer{
+            position: relative;
+            height: auto;
+            width: 100%;
+            
+            background: #3044a5;
+        }
+        .container{
+            padding: 50px ;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 2fr repeat(3, 1fr);
+            gap: 20px;
+        }
+        .container h2{
+            position: relative;
+            color: white;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .container h2::before{
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            height: 2px;
+            width: 100px;
+            background: rgb(252, 248, 1);
+        }
+        .container p{
+            color: white;
+            margin-bottom: 10px;
+        }
+        .social{
+            display: grid;
+            list-style: none;
+            grid-template-columns: repeat(4,1fr);
+        }
+        .social a{
+            display: grid;
+            width: 45px;
+            height: 45px;
+            background: #3e56cb;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            margin: 20px 0;
+        }
+        .social a i{
+            color: white;
+            font-size: 18px;
+        }
+        .quicklink ul{
+            list-style: none;
+        }
+        .quicklink ul a{
+            color: #ffffff;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .contact ul{
+            list-style: none;
+
+        }
+        .contact ul li{
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            margin-bottom: 20px;
+            gap: 10px;
+        }
+        .contact ul li span:nth-child(1), .contact ul li span:nth-child(2){
+            color: white;
+        }
+        .copy{
+            width: 100%;
+           
+            background: #1f3389;
+            text-align: center;
+            padding: 8px ;
+        }
+        .copy p{
+            color: white;
+            font-size: 18px;
+        }
+        @media (max-width: 992px){
+            .container{
+                padding: 40px;
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px){
+            .container{
+                padding: 40px;
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <footer>
+        <div class="container">
+            <div class="aboutus">
+                <h2>About us</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio sapiente, maxime vero culpa beatae eos provident voluptates aspernatur sit nemo.</p>
+    
+                <ul class="social">
+                    <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-youtube"></i></a></li>
+                </ul>
+            </div>
+            <div class="quicklink">
+                <h2>Quick Link</h2>
+                <ul>
+                    <li><a href="">About</a></li>
+                    <li><a href="">FAQ</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">Privacy Policy</a></li>
+                    <li><a href="">Help</a></li>
+                </ul>
+            </div>
+            <div class="quicklink">
+                <h2>Shop</h2>
+                <ul>
+                    <li><a href="">Man</a></li>
+                    <li><a href="">Woman</a></li>
+                    <li><a href="">Children</a></li>
+                    <li><a href="">Shoes</a></li>
+                    <li><a href="">Watch</a></li>
+                </ul>
+            </div>
+            <div class="contact">
+                <h2>Contact Us</h2>
+                <ul>
+                    <li>
+                        <span><i class="fa-solid fa-location-dot"></i></span>
+                        <span>Dhaka, Bangladesh</span>
+                    </li>
+                    <li>
+                        <span><i class="fa-solid fa-phone"></i></span>
+                        <p>+1535582523645 <br> +554563563</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="copy">
+            <p>&copy; 2025 All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
