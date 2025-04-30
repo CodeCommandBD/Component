@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+    <script src="https://kit.fontawesome.com/98693b79c6.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #eef8ff;
+        }
+
+        footer {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            background: linear-gradient(to right, #00093c, #2d0b00);
+            color: white;
+            padding: 100px 0 30px;
+            font-size: 12px;
+            line-height: 20px;
+            border-top-left-radius: 125px;
+        }
+
+        .row {
+            width: 85%;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: start;
+            justify-content: space-between;
+        }
+
+        .row img {
+            width: 80px;
+            margin-bottom: 15px;
+        }
+
+        .col {
+            flex-basis: 25%;
+            padding: 10px;
+        }
+
+        .col:nth-child(2),
+        .col:nth-child(3) {
+            flex-basis: 15%;
+        }
+
+        .col h3 {
+            width: fit-content;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .email-id {
+            width: fit-content;
+            border-bottom: 1px solid #ccc;
+            margin: 20px 0;
+        }
+
+        ul li {
+            list-style: none;
+            margin-bottom: 12px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        form {
+            padding-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 40px;
+        }
+
+        .sms {
+            font-size: 18px;
+            margin-right: 10px;
+
+        }
+
+        form input {
+            width: 100%;
+            background: transparent;
+            color: #ccc;
+            border: 0;
+        }
+
+        form button {
+            background: transparent;
+            border: 0;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .arrow {
+            font-size: 16px;
+            color: #ccc;
+        }
+
+        .social-icon i {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-size: 20px;
+            color: #000;
+            background: #fff;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+        hr {
+            width: 90%;
+            border: 0;
+            border-bottom: 1px solid #ccc;
+            margin: 20px auto;
+        }
+
+        .copy {
+            text-align: center;
+        }
+
+        .underline {
+            width: 100%;
+            height: 5px;
+            background: #767676;
+            border-radius: 3px;
+            position: absolute;
+            top: 25px;
+            left: 0;
+            overflow: hidden;
+        }
+
+        .underline span {
+            width: 15px;
+            height: 100%;
+            background: #fff;
+            border-radius: 3px;
+            position: absolute;
+            top: 0;
+            left: 10px;
+            animation: moveing 2s linear infinite;
+        }
+
+        @keyframes moveing {
+            0% {
+                left: -20px;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .col {
+                flex-basis: 100%;
+                
+            }
+
+            .col:nth-child(2),
+            .col:nth-child(3) {
+                flex-basis: 100%;
+                
+            }
+           
+        }
+    </style>
+</head>
+
+<body>
+    <footer>
+        <div class="row">
+            <div class="col">
+                <img src="./brain.png" alt="" class="logo">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit at facilis unde, deserunt nesciunt
+                    quos.</p>
+
+            </div>
+            <div class="col">
+                <h3>Office <span class="underline"><span></span></span></h3>
+                <p>DHaka</p>
+                <p>Bangladesh</p>
+                <p class="email-id"> adfe@gmail.com</p>
+                <h4>+741158522</h4>
+            </div>
+            <div class="col">
+                <h3>Links <span class="underline"><span></span></span></h3>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Service</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3>Newsletter <span class="underline"><span></span></span></h3>
+                <form action="">
+                    <i class="sms fa-solid fa-envelope"></i>
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">
+                        <i class="arrow fa-solid fa-arrow-right"></i>
+                    </button>
+                </form>
+                <div class="social-icon">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="copy">&copy; 2025 - All Rights Reserved</p>
+    </footer>
+</body>
+
+</html>
